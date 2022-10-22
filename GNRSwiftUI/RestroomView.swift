@@ -6,22 +6,24 @@
 //
 
 import SwiftUI
+import Combine
 
 struct RestroomsView: View {
-    @EnvironmentObject var network: Network
+    @ObservedObject var restroomViewModel: RestroomListViewModel
+    
+    init(type: String, zipCode: String) {
+        self.restroomViewModel = RestroomListViewModel(type: type, zipcode: zipCode)
+    }
     
     var body: some View {
-        List(network.restrooms) {
+        List(restroomViewModel.restrooms) {
             Text($0.name)
-        }
-        .onAppear {
-            print(network.restrooms)
         }
     }
 }
 
 struct RestroomsViewController_Previews: PreviewProvider {
     static var previews: some View {
-        RestroomsView()
+        RestroomsView(type: "dentist", zipCode: "94501")
     }
 }

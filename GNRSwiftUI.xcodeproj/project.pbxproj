@@ -18,6 +18,8 @@
 		081CA12C2904771E00EA8D78 /* RestroomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081CA12B2904771E00EA8D78 /* RestroomView.swift */; };
 		081CA12E290479A500EA8D78 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081CA12D290479A500EA8D78 /* Network.swift */; };
 		081CA13029047B1500EA8D78 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081CA12F29047B1500EA8D78 /* Endpoint.swift */; };
+		081CA1342904959F00EA8D78 /* RestroomSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081CA1332904959F00EA8D78 /* RestroomSearchViewModel.swift */; };
+		081CA1362904AB2A00EA8D78 /* RestroomsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081CA1352904AB2A00EA8D78 /* RestroomsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		081CA12F29047B1500EA8D78 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		081CA13129047D8A00EA8D78 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		081CA13229048B3300EA8D78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		081CA1332904959F00EA8D78 /* RestroomSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestroomSearchViewModel.swift; sourceTree = "<group>"; };
+		081CA1352904AB2A00EA8D78 /* RestroomsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestroomsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,8 @@
 				081CA12F29047B1500EA8D78 /* Endpoint.swift */,
 				081CA1292904770A00EA8D78 /* RestroomModel.swift */,
 				081CA12B2904771E00EA8D78 /* RestroomView.swift */,
+				081CA1332904959F00EA8D78 /* RestroomSearchViewModel.swift */,
+				081CA1352904AB2A00EA8D78 /* RestroomsViewModel.swift */,
 				081CA13129047D8A00EA8D78 /* Config.xcconfig */,
 				081CA1032904730300EA8D78 /* Assets.xcassets */,
 				081CA1052904730300EA8D78 /* Preview Content */,
@@ -273,10 +279,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				081CA1342904959F00EA8D78 /* RestroomSearchViewModel.swift in Sources */,
 				081CA12E290479A500EA8D78 /* Network.swift in Sources */,
 				081CA12A2904770A00EA8D78 /* RestroomModel.swift in Sources */,
 				081CA1022904730200EA8D78 /* ContentView.swift in Sources */,
 				081CA1002904730200EA8D78 /* GNRSwiftUIApp.swift in Sources */,
+				081CA1362904AB2A00EA8D78 /* RestroomsViewModel.swift in Sources */,
 				081CA13029047B1500EA8D78 /* Endpoint.swift in Sources */,
 				081CA12C2904771E00EA8D78 /* RestroomView.swift in Sources */,
 			);

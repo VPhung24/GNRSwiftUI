@@ -8,35 +8,38 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var network: Network
-    @State private var lookupRestroomType: String = ""
-    @State private var zipcode: String = ""
-    @State private var isActive: Bool = false
+    @ObservedObject private var restroomRequestViewModel = RestroomSearchViewModel()
+    @State var isActive = false
     
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("")) {
-                    TextField(
-                        "Type",
-                        text: $lookupRestroomType
-                    )
-                    TextField(
-                        "Zipcode",
-                        text: $zipcode
-                    )
-                    .keyboardType(.numberPad)
-                    Button("Find") {
-                        if !self.isActive {
-                            network.findRestrooms(ofType: lookupRestroomType, atZipCode: zipcode)
-                        }
-                        self.isActive = true
+                Section(
+                    header: Text("type"),
+                    footer: Text(restroomRequestViewModel.typeMessage).foregroundColor(.red)) {
+                        TextField(
+                            "ex sushi, fries, steak",
+                            text: $restroomRequestViewModel.type
+                        )
+                        .autocapitalization(.none)
                     }
-                }
-                
+                Section(
+                    header: Text("zipcode"),
+                    footer: Text(restroomRequestViewModel.zipcodeMessage).foregroundColor(.red)) {
+                        TextField(
+                            "ex 10001",
+                            text: $restroomRequestViewModel.zipcode
+                        )
+                        .keyboardType(.numberPad)
+                    }
+                NavigationLink(
+                    "Find",
+                    destination:
+                        RestroomsView(type: restroomRequestViewModel.type, zipCode: restroomRequestViewModel.zipcode)
+                )
+                .disabled(!restroomRequestViewModel.isValid)
             }
             .navigationTitle("GNR: Restrooms for All")
-//            NavigationLink("Restrooms", destination: RestroomsView().environmentObject(network), isActive: $isActive)
         }
     }
 }
@@ -44,6 +47,5 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .environmentObject(Network())
     }
 }

@@ -9,12 +9,9 @@ import SwiftUI
 
 @main
 struct GNRSwiftUIApp: App {
-    var network = Network()
-
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(network)
         }
     }
 }
