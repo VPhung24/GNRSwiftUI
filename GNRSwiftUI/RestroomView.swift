@@ -8,26 +8,20 @@
 import SwiftUI
 
 struct RestroomsView: View {
-    @State var restrooms: [RestroomModel]
+    @EnvironmentObject var network: Network
     
     var body: some View {
-        List(restrooms) {
+        List(network.restrooms) {
             Text($0.name)
+        }
+        .onAppear {
+            print(network.restrooms)
         }
     }
 }
 
 struct RestroomsViewController_Previews: PreviewProvider {
     static var previews: some View {
-        RestroomsView(
-            restrooms:
-                [
-                    RestroomModel(name: "Example 1", url: "blah"),
-                    RestroomModel(name: "Example 2", url: "blah"),
-                    RestroomModel(name: "Example 3", url: "blah"),
-                    RestroomModel(name: "Example 4", url: "blah"),
-                    RestroomModel(name: "Example 5", url: "blah")
-                ]
-        )
+        RestroomsView()
     }
 }
